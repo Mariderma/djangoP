@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="/static/productos/admin_update.css">
+</head>
+<body>
+    <div class="header">
+        <form action="{% url 'admin-productos-list' %}" method="get" style="margin:0;">
+            <button type="submit" class="btn-create">Volver a la lista</button>
+        </form>
+        <h1>Editar Producto</h1>
+    </div>
+    <form method="post" class="form-update">
+        {% csrf_token %}
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre" value="{{ producto.nombre }}" required><br><br>
+        <label>Descripción:</label><br>
+        <textarea name="descripcion">{{ producto.descripcion }}</textarea><br><br>
+        <label>Precio:</label><br>
+        <input type="number" step="0.01" name="precio" value="{{ producto.precio }}" required><br><br>
+        <label>Stock:</label><br>
+        <input type="number" name="stock" value="{{ producto.stock }}" required><br><br>
+        <label>Activo:</label>
+        <input type="checkbox" name="activo" {% if producto.activo %}checked{% endif %}><br><br>
+        <label>Link Imagen:</label><br>
+        <input type="url" name="link_imagen" value="{{ producto.link_imagen }}"><br><br>
+        <button type="submit" class="btn-create">Guardar Cambios</button>
+    </form>
+</body>
+</html>

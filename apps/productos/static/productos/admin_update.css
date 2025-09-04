@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .btn-create {
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.header .btn-create:hover {
+    background: #219150;
+}
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+.form-update {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #eaf6fb;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0px;
+}
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #dbeaf3;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #f9fcff;
+    margin-bottom: 1px;
+}
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-left: 8px;
+}
+button.btn-create {
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button.btn-create:hover {
+    background: #2471a3;
+}

@@ -77,15 +77,11 @@ WSGI_APPLICATION = 'financeManager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'django-practice',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://MariamGutierrez:Kuyaminovio123@cluster0.tbevh.mongodb.net/django-practice?retryWrites=true&w=majority',
-            # El nombre de la base de datos debe ir al final de la URL y se recomienda agregar los parámetros de Atlas
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
 
 
 # Password validation

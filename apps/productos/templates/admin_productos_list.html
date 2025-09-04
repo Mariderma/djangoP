@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrar Productos</title>
+    <link rel="stylesheet" href="/static/productos/admin_dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <form action="{% url 'admin-productos-create' %}" method="get" style="margin:0;">
+            <button type="submit" class="btn-create">Crear Producto</button>
+        </form>
+        <h1>Lista de Productos</h1>
+    </div>
+    <table style="border-spacing:0; border-collapse:separate;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Activo</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+        <tr style="border-bottom:2px solid #eaf6fb;">
+            <td style="background:#f9fcff; text-align:center; border-right:2px solid #dbeaf3;">{{ producto.nombre }}</td>
+            <td style="background:#f9fcff; text-align:center; border-right:2px solid #dbeaf3;">{{ producto.descripcion }}</td>
+            <td style="background:#f4f8fa; text-align:center; border-right:2px solid #dbeaf3;">${{ producto.precio }}</td>
+            <td style="background:#f4f8fa; text-align:center; border-right:2px solid #dbeaf3;">{{ producto.stock }}</td>
+            <td style="background:#f9fcff; text-align:center; border-right:2px solid #dbeaf3;">
+                {% if producto.activo %}
+                    <span style="color:#27ae60; font-weight:bold;">Activo</span>
+                {% else %}
+                    <span style="color:#e74c3c; font-weight:bold;">Inactivo</span>
+                {% endif %}
+            </td>
+            <td style="background:#f9fcff; text-align:center; border-right:2px solid #dbeaf3;">
+                {% if producto.link_imagen %}
+                    <img src="{{ producto.link_imagen }}" alt="Imagen" style="max-width:80px; max-height:80px; border-radius:6px; box-shadow:0 1px 4px #dbeaf3;">
+                {% else %}
+                    <span style="color:#aaa;">Sin imagen</span>
+                {% endif %}
+            </td>
+            <td style="background:#f4f8fa; text-align:center;">
+                <form method="post" action="{% url 'admin-productos-delete' producto.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar</button>
+                </form>
+                <form action="{% url 'admin-productos-update' producto.id %}" method="get" style="display:inline; margin-left:8px;">
+                    <button type="submit" class="btn-create" style="background:#2980b9;">Editar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
