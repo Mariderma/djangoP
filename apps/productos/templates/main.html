@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Principal</title>
+    <link rel="stylesheet" href="/static/productos/admin_dashboard.css">
+    <style>
+        .main-container {
+            max-width: 500px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px #eaf6fb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+        }
+        .main-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1em;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            background: #2980b9;
+            color: #fff;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .main-btn:hover {
+            background: #2471a3;
+        }
+        .main-btn.admin {
+            background: #2c3e50;
+        }
+        .main-btn.api {
+            background: #27ae60;
+        }
+        .main-btn.custom {
+            background: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Dashboard Principal</h1>
+        <form action="/admin/" method="get">
+            <button type="submit" class="main-btn admin">Admin Django</button>
+        </form>
+        <form action="/api/productos/" method="get">
+            <button type="submit" class="main-btn api">API de Prueba</button>
+        </form>
+        <form action="/api/admin/productos/" method="get">
+            <button type="submit" class="main-btn custom">Admin Personalizado Productos</button>
+        </form>
+    </div>
+</body>
+</html>

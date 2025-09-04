@@ -1,3 +1,6 @@
+# Vista principal del dashboard
+def main_dashboard(request):
+    return render(request, 'main.html')
 # Vista para actualizar producto
 def admin_productos_update(request, pk):
     producto = Producto.objects(id=pk).first()
