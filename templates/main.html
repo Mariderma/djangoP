@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Principal</title>
+    <link rel="stylesheet" href="/static/productos/admin_dashboard.css">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; }
+        .main-container { max-width: 600px; margin: 60px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 32px; }
+        h1 { text-align: center; margin-bottom: 32px; }
+        .nav-links { display: flex; flex-direction: column; gap: 18px; }
+        .nav-links a { display: block; background: #1976d2; color: #fff; text-decoration: none; padding: 16px; border-radius: 6px; text-align: center; font-size: 1.1em; transition: background 0.2s; }
+        .nav-links a:hover { background: #1565c0; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Dashboard Principal</h1>
+        <div class="nav-links">
+            <a href="/admin/">Ir al Admin de Django</a>
+            <a href="/api/productos/">Ir a la API de Productos</a>
+            <a href="/admin/productos/">Ir al Panel de Productos</a>
+        </div>
+    </div>
+</body>
+</html>
